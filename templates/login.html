@@ -1,0 +1,67 @@
+{% from 'form_helper.html' import displayField %}
+{% extends 'prelogin-layout.html' %}
+
+{% block title %}LogIn{% endblock %}
+
+{% block content %}
+
+	<!-- Font Icon -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/material-icon/css/material-design-iconic-font.min.css') }}">
+
+    <!-- Main css -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+	 
+	 <div class="main">
+        <a href="/"><img src="{{ url_for('static', filename='img/indexLogo.png') }}" width="120px"></a>
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="{{ url_for('static', filename='img/signin-image.jpg') }}" alt="sing in image"></figure>
+                        <a href="/signup" class="signup-image-link">Create an account</a>
+                    </div>
+
+                    <div class="signin-form">
+                        <h2 class="form-title">Sign in</h2>
+                        <form action="{{ url_for('login') }}" method="POST" class="register-form" id="login-form">
+							<!-- Form Vaqlidations are from form_helper.html using macro -->
+
+							<div class="form-group">
+                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+								{{ displayField(form.username, "Username", autocomplete='off',
+								autofocus=true)}}
+							</div>
+
+							<div class="form-group">
+                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+								{{ displayField(form.password, "Password")}}
+							</div>
+
+							<div class="form-group form-button">
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+                            </div>
+                            {{ form.csrf_token }} 	<!-- For preventing XSS Attacks( A token from Flask-WTF ) -->
+                        </form>
+                        <div class="social-login">
+                            <span class="social-label">Contact Developer</span>
+                            <ul class="socials">
+                                <li><a target="_blank" href="https://www.facebook.com/iamvaibhavmishra"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                                
+                                <li><a target="_blank" href="https://twitter.com/imvaibhavmishra"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+
+                                <li><a target="_blank" href="https://github.com/itsvaibhavmishra"><i class="display-flex-center zmdi zmdi-github"></i></a></li>
+
+                                <li><a target="_blank" href="https://www.instagram.com/itsvaibhavmishra/"><i class="display-flex-center zmdi zmdi-instagram"></i></a></li>
+
+                                <li><a target="_blank" href="https://www.linkedin.com/in/itsvaibhavmishra/"><i class="display-flex-center zmdi zmdi-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+{% endblock %}

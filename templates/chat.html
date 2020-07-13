@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>TwinkChat</title>
+
+	<!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Custom css -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/chat_style.css') }}">
+
+
+</head>
+	<body>
+		<!-- Flash error messages -->
+	        {% with messages = get_flashed_messages() %}
+	            {% if messages %}
+	                <p class=formError>{{ messages[0] }}</p>
+	            {% endif %}
+	        {% endwith %}
+	    
+	    <div class="wrapper" style="background-color: white">
+			 <!-- Nav bar start -->
+	        <nav class="navbar navbar-expand-sm navbar-light fixed-top" style="background-color: #66a1ee">	<!-- Nav section background change -->
+
+	            <div class="container-fluid">
+	                <div id="show-sidebar-button" class="cursor-pointer">
+	                    <i class="fas fa-plus-circle "></i>
+	                    <span>Rooms</span>
+	                </div>
+	                <div class="brand-logo">
+			            <img src="{{ url_for('static', filename='img/404Logo.png') }}" width="120px" class="nav-img" style="margin-left: -76px;">
+				    </div>
+	                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	                <span class="navbar-toggler-icon"></span>
+	                </button>
+	                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	                    <ul class="navbar-nav ml-auto">
+	                        <li class="nav-item">
+	                            <a id="logout-btn" class="nav-link" href="{{ url_for('logout') }}"><span style="color: #335177">Logout</span></a>
+	                        </li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </nav>
+	            <!-- Nav bar end -->
+			
+			<div id="main-section">
+				<!-- Room Selection -->
+				<nav id="sidebar">
+					
+					<h4>ROOMS</h4>
+					{% for room in rooms %}
+						<p id="{{ room }}" class="room-selection cursor-pointer">{{ room }}</p>
+					{% endfor %}
+
+				</nav>
+					<!-- Sidebar end -->
+
+
+				<!-- Message Section -->
+				<div id="right-pannel">
+					<!-- Display Message -->
+					<div id="display-message-section">
+						
+					</div>
+					<!-- Input Message -->
+					<div id="input-area" class="input-group mb-3">
+						<input type="text" id="user_message" placeholder="Type a message" aria-label="Type a message" aria-describedby="basic-addon2" autocomplete="off" style="width: 70%;">
+						
+						<div class="input-group-append">
+						    <button id="send_message" class="btn btn-warning" style="border-color: white; background-color: #66a1ee; box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 10px #25d366;" type="button">SEND <i class="fas fa-paper-plane"></i></button>
+	                    </div>
+					</div>
+					<!-- Input Message Ends -->
+				</div>
+				<!-- Right pannel ends -->
+			</div>
+			<!-- Main section ends -->
+		</div>
+		<!-- Wrapper class ends -->
+
+		<!-- Get Username from socket js file-->
+		<script type="text/javascript">
+			const username = `{{ username }}`;
+		</script>
+
+		<!-- Custom Chat JS -->
+		<script src="{{ url_for('static', filename='scripts/chat_page.js') }}"></script>
+
+		<!-- SocketIO JS -->
+		<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+
+		<!-- Custom SocketIO JS -->
+		<script src="{{ url_for('static', filename='scripts/socketio.js') }}"></script>
+
+		 <!-- Bootstrap -->
+	    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	    <!-- Font Awesome JS -->
+	    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+	    
+	    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+
+	</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+    <title>My website</title>
+    <style>
+        body {
+            color: white;
+            font-family: sans-serif;
+            margin: 0;
+            background: url('/static/img/leaves.jpg'), center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #container {
+            position: relative;
+            height: 752px;
+        }
+
+
+        .logo {
+            margin-left: 25px;
+            margin-top: 2px;
+            display: inline-block;
+        }
+
+        #center {
+
+            display: flex;
+            position: absolute;
+            top: 20%;
+            left: 8%;
+            width: 90%;
+            margin: 0 auto;
+            /*            background: red;*/
+
+        }
+        #center-text {
+            width: 100%;
+        }
+
+        h1 {
+            line-height: 1.5;
+            font-size: 40px;
+        }
+
+        h4 {
+            color: white;
+            opacity: 0.6;
+            font-family: monospace;
+            letter-spacing: 1.3px;
+        }
+
+        #b1,
+        #b2 {
+            background-color: transparent;
+            width: 128px;
+            height: 32px;
+            border: 1.5px solid white;
+            color: white;
+            font-family: monospace;
+            font-size: 9px;
+            letter-spacing: 1.2px;
+        }
+
+        #b1:hover,
+        #b2:hover {
+            overflow: hidden;
+            font-weight: bold;
+            width: 135px;
+            height: 36px;
+            border: 2px solid white;
+            color: white;
+            font-size: 10px;
+            cursor: pointer;
+            display: inline-block;
+            transition: all 0.25s ease;
+        }
+
+        #links {
+            
+            float: right;
+            line-height: 3.5;
+            margin-top: 10px;
+            background-color: transparent;
+        }
+        
+
+        #img1:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        
+
+
+        @media screen and (max-width: 580px) {
+
+            #center-text {
+                width: 100%;
+                top: 15%;
+                text-align: center;
+            }
+
+            #center {
+                display: unset;
+            }
+
+            #center-button {
+
+                top: 15%;
+
+            }
+
+            .Breaker {
+                display: none;
+            }
+
+            #links {
+                float: none;
+                padding-top: 15%;
+                padding-left: 10%;
+            }
+
+            .logo {
+                width: 160px;
+                margin: 0 32%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="logo">
+            <img src="{{ url_for('static', filename='img/404Logo.png') }}" width="150px" class="logo">
+        </div>
+
+        <div id="center">
+
+            <div id="center-text">
+                <h4>Feel to support/contribute?</h4>
+
+                <h1>Contact Developer<br>Using The Social Media links</h1>
+                <br>
+                <div id="center-button">
+                <a href="/signup" target="_blank"> <button id="b1">Sign Up</button></a>
+                &nbsp;&nbsp;
+
+                <a href="/login" target="_blank"><button id="b2">Sign In</button></a>
+            </div>
+            </div>
+
+            
+
+            <div id="links">
+                <div id="link-next">
+                <a href="#"><img src="{{ url_for('static', filename='img/social/facebook.png') }}" width="37px" id="img1"></a><br class="Breaker">
+                <a href="#"><img src="{{ url_for('static', filename='img/social/twitter.png') }}" width="37px" id="img1"></a><br class="Breaker">
+                <a href="#"><img src="{{ url_for('static', filename='img/social/github.png') }}" width="37px" id="img1"></a><br class="Breaker">
+                <a href="#"><img src="{{ url_for('static', filename='img/social/instagram.png') }}" width="37px" id="img1"></a><br class="Breaker">
+                <a href="#"><img src="{{ url_for('static', filename='img/social/linkedin.png') }}" width="37px" id="img1"></a><br class="Breaker">
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</body></html>

@@ -1,0 +1,78 @@
+{% from 'form_helper.html' import displayField %}
+
+{% extends "prelogin-layout.html" %}
+
+{% block title %}Registration{% endblock %}
+
+
+{% block content %}
+	<!-- Font Icon -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/material-icon/css/material-design-iconic-font.min.css') }}">
+
+    <!-- Main css -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+
+
+    <div class="main">  
+    	<a href="/"><img src="{{ url_for('static', filename='img/indexLogo.png') }}" width="120px"></a>
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title tit">Sign up</h2>
+                    <div class="social-login adj">
+                        <span class="social-label">Supported emails:</span>
+                        <!-- <p>Gmail, Yahoo, Outlook, Hotmail</p> -->
+                        <ul class="socials">
+                            <li title="Gmail"><img src="{{ url_for('static', filename='img/icons/icons8-google.svg') }}" alt="Gmail"></li>
+                            <li title="Yahoo"><img src="{{ url_for('static', filename='img/icons/icons8-yahoo.svg') }}" alt="Yahoo"></li>
+                            <li title="Outlook"><img src="{{ url_for('static', filename='img/icons/icons8-outlook-calendar.svg') }}" alt="Outloook"></li>
+                            <li title="Hotmail"><img src="{{ url_for('static', filename='img/icons/hotmail-icon.png') }}" alt="Hotmail"></li>
+                        </ul>
+                    </div>
+
+
+
+					<form action="{{ url_for('signup') }}" class="register-form" id="register-form" method="POST">
+						
+						<!-- Form Vaqlidations are from form_helper.html using macro -->
+						<div class="form-group">
+						<label for="email"><i class="zmdi zmdi-email"></i></label>
+						{{ displayField(form.email, "Email", autocomplete='off',
+							autofocus=true)}}
+						</div>
+
+						<div class="form-group">
+						<label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+						{{ displayField(form.username, "Username", autocomplete='off',
+							autofocus=true)}}
+						</div>
+
+						<div class="form-group">
+						<label for="pass"><i class="zmdi zmdi-lock"></i></label>
+						{{ displayField(form.password, "Password")}}
+						</div>
+
+						<div class="form-group">
+						<label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+						{{ displayField(form.confirm_pswd, "Confirm Password")}}
+						</div>
+						
+						<div class="form-group form-button">
+                            <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                         </div>
+
+						{{ form.csrf_token }} 	<!-- For preventing XSS Attacks( A token from Flask-WTF ) -->
+					</form>
+				</div>
+
+			    <div class="signup-image">
+					<figure><img src="{{ url_for('static', filename='img/signup-image.jpg') }}" alt="sing up image"></figure>
+					<a href="/login" class="signup-image-link">I am already member</a>
+				</div>
+            </div>
+        </div>
+    </section>
+	</div>
+
+{% endblock %}

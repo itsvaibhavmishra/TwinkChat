@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>TwinkChat - A basic chat app</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  
+  <!-- Custom css -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/Navigation-with-Button.css') }}">
+  <link rel="stylesheet" media="screen" href="{{ url_for('static', filename='css/particle.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+
+<!-- partial:index.partial.html -->
+<section1 class="arr">
+<div id="particles-js"></div>
+<div class="adjust">
+<div class="top">
+<nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+  <div class="container con"><a href="#"><img src="{{ url_for('static', filename='img/indexLogo.png') }}" width="120px"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse"
+          id="navcol-1">
+          <ul class="nav navbar-nav mr-auto">
+          <li class="nav-item" role="presentation"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item" role="presentation"><a class="nav-link" href="/contact">Contact Us</a></li>
+            </ul><span class="navbar-text actions">
+          <button class="btn btn-primay" onclick="window.location.href = '/signup' ">Signup</button>
+          <button class="btn btn-primay" onclick="window.location.href = '/login' ">Login</button>    
+          </span></div>
+  </div>
+</nav>
+</div>
+
+<div class="cont">
+
+  <div class="row hii">
+    <div class="col-12 col-sm-5">
+      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="" class="img-fluid pos">
+      <img src="{{ url_for('static', filename='img/404Logo.png') }}" alt="" class="img-fluid mob">
+    </div>
+    <div class="col-12 col-sm-7 text-center">
+       <p class="sub-text">A base for a new community</p>
+
+      <img class="sub-img" src="{{ url_for('static', filename='img/TwinkDemo.gif') }}">
+    </div>
+  </div>
+</div>
+</div>
+
+</section1>
+<scection2 class="row p-5">
+  <div class="col-12 col-sm-5">
+    <img src="{{ url_for('static', filename='img/MyPic.jpg') }}" alt="" class="img-fluid p-3">
+  </div>
+  <div class="col-12 col-sm-7 p-3">
+          <h2 class="About-Dev">About Developer</h2>
+  
+          <p class="Para mt-5 mb-5">Hi! This is Vaibhaw Mishra and I welcome you on my page. This Chat App was created by me as a mini-project, which is capable of handling real-time messages with a user authentication system and message control. I am always open for suggestions and contributions, you can connect with me by clicking on any of the social icons present below. Thanks to my fellow teammates who helped me complete this project.</p>
+          <p class="Para mt-5 mb-5">If you wish to see the code for this project and my other achievements then you can access my <a target="_blank" href="https://github.com/itsvaibhavmishra">Github</a>.
+          <h4 class="font-weight-bold">Contact Developer</h4><br>
+          <div class="social">
+            <a target="_blank" href="https://www.facebook.com/iamvaibhavmishra"><img id="img1" src="{{ url_for('static', filename='img/social/facebook.png') }}" alt="" width="7%"></a>
+            <a target="_blank" href="https://twitter.com/imvaibhavmishra"><i class="display-flex-center zmdi zmdi-twitter"><img id="img1" src="{{ url_for('static', filename='img/social/twitter.png') }}" alt="" width="7%"></a>
+            <a target="_blank" href="https://github.com/itsvaibhavmishra"><i class="display-flex-center zmdi zmdi-github"><img id="img1" src="{{ url_for('static', filename='img/social/github.png') }}" alt="" width="7%"></a>
+            <a target="_blank" href="https://www.instagram.com/itsvaibhavmishra/"><img id="img1" src="{{ url_for('static', filename='img/social/instagram.png') }}" alt="" width="7%"></a>
+            <a target="_blank" href="https://www.linkedin.com/in/itsvaibhavmishra/"><img id="img1" src="{{ url_for('static', filename='img/social/linkedin.png') }}" alt="" width="7%"></a>
+            
+          </div>
+          
+  </div>
+       
+</scection2>
+<section class="About-Dev" id="team">
+  <div class="container">
+    <div class="section-header wow fadeInUp">
+      <h3><u>Front-end Support Members</u>:-</h3><br>
+    </div>
+    <div class="row">
+
+      
+
+      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="member">
+          <img src="{{ url_for('static', filename='img/ankit.jpg') }}" class="img-fluid" alt="">
+          <div class="member-info">
+            <div class="member-info-content">
+              <h4>Ankit Jaiswal</h4>
+              <span>Co-Developer</span>
+                <span>Lead Web-Developer</span>
+              <div class="social">
+                <a target="_blank" href="https://twitter.com/im_ankitjais12/"><img src="{{ url_for('static', filename='img/social/twitter.png') }}" width="12%" alt=""></a>
+                <a target="_blank" href="https://github.com/im-ankitjais"><img src="{{ url_for('static', filename='img/social/github.png') }}" width="12%" alt=""></a>
+                <a target="_blank" href="https://www.linkedin.com/in/ankit-jaiswal-0a9826171/"><img src="{{ url_for('static', filename='img/social/linkedin.png') }}" width="12%" alt=""></a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="member">
+          <img src="{{ url_for('static', filename='img/vipul.png') }}" class="img-fluid" alt="">
+          <div class="member-info">
+            <div class="member-info-content">
+              <h4>Vipul Kumar</h4>
+              <span>Co-Developer</span>
+                <span>Lead Web-Developer</span>
+              <div class="social">
+                <a target="_blank" href="https://twitter.com/VipulKu07071029/"><img src="{{ url_for('static', filename='img/social/twitter.png') }}" width="12%" alt=""></a>
+                <a target="_blank" href="https://github.com/vipulk19778"><img src="{{ url_for('static', filename='img/social/github.png') }}" width="12%" alt=""></a>
+                <a target="_blank" href="https://www.linkedin.com/in/vipul-kumar-92aaab171/"><img src="{{ url_for('static', filename='img/social/linkedin.png') }}" width="12%" alt=""></a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="font-size: 19px">A very thanks to the front-end suppoert team (Ankit & Vipul)</p>
+    </div>
+
+  </div>
+</section>
+
+<script src="http://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
+
+<script src="../static/scripts/particles.js"></script>
+<script src="../static/scripts/app.js"></script>
+
+
+</body>
+</html>
