@@ -19,8 +19,8 @@ Test the app: https://twinkchat.herokuapp.com/
     
 The app is designed and developed with these features:-
 
-Index Page Features
---------------------
+Index Page
+-----------
 
     ->(Particle JS) On the index page particle js is used to make the design look cool enough on itself.
     ->(Gradient Background) The background automatically changes colour time to time.
