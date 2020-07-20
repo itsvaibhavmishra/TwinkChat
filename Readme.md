@@ -15,7 +15,6 @@ Developed on python v3
 Features
 ==============
 
-Test the app: https://twinkchat.herokuapp.com/
     
 The app is designed and developed with these features:-
 
