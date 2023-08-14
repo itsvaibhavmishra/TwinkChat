@@ -1,3 +1,8 @@
+
+> Upgrade Alert!: Project Deprecated! Discover [TwinkChat 2.0](https://github.com/itsvaibhavmishra/TwinkChat-2.0/) in my repo – Built using MERN Stack with better features
+
+</br>
+
 TwinkChat - A basic chat application
 ==============
 
