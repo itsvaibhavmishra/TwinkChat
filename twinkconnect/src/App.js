@@ -12,8 +12,6 @@ function App() {
         <a
           className="App-link"
           href="https://twinkconnect.netlify.app"
-          target="_blank"
-          rel="noopener"
         >
           Connect Now!
         </a>
