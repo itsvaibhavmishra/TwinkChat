@@ -13,7 +13,7 @@ function App() {
           className="App-link"
           href="https://twinkconnect.netlify.app"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
         >
           Connect Now!
         </a>
